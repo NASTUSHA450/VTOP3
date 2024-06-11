@@ -15,9 +15,14 @@ a {
     border: 4px solid $orange;
 }
 
+.border-yellow {
+    border: 2px solid $yellow;
+}
+
 .btn-orange {
     background-color: $orange !important;
     border: $orange !important;
+    color: white;
 }
 
 .container {
@@ -37,7 +42,6 @@ a {
 #landing {
     background-color: #191d0a;
     height: 100vh;
-    position: absolute;
 
     &::after {
         position: absolute;
@@ -63,28 +67,18 @@ a {
         z-index: 2;
     }
 
-    @media screen and (max-width:1550px) {
-        height: auto;
-    }
 }
 
 #navbar {
     border-radius: 64px;
-    min-height: 80px;
-    z-index: 4;
-
-    .nav-link {
-        cursor: pointer;
-    }
+    z-index: 6;
 
     .buttonset {
 
         .select,
         button {
             background: transparent;
-            border: 2px solid $yellow;
             border-radius: 24px;
-            color: white;
             padding: 0.5rem 0.75rem;
         }
 
@@ -93,85 +87,29 @@ a {
             top: 20%;
             background: $dark;
 
-            a {
-                width: 100%;
-            }
-
             img {
-                height: 1.25rem;
-                width: 1.25rem !important;
-            }
-
-            @media screen and (max-width:992px) {
-                top: 16%;
-            }
-        }
-    }
-
-
-
-    @media screen and (max-width: 1400px) {
-        .nav {
-            justify-content: start !important;
-        }
-    }
-
-    @media screen and (max-width: 991px) {
-        min-height: 65px;
-
-        .nav {
-            display: none !important;
-        }
-
-        .buttonset {
-            button {
-                display: none;
-            }
-
-            .select {
-                border-radius: 100px;
-                padding: 0.5rem;
-                left: -3.5rem;
-
-                p {
-                    display: none;
-                }
-            }
-
-            #burger {
-                display: block !important;
-                width: 22px;
+                height: 1rem;
+                width: 1rem !important;
             }
         }
     }
 }
 
 #BurgerMenu {
-    width: 100%;
     min-height: 100vh;
     background: $dark;
     z-index: 5;
-    margin-top: 7rem;
+    padding-top: 7rem;
     overflow-y: scroll !important;
 
     .burger-link,
     button {
-        padding: 1rem 2rem;
-        border: 4px solid $orange;
         border-radius: 64px;
-        margin-bottom: 0.5rem;
     }
 
     button {
-        color: white;
-
         &:first-of-type {
-            border: 2px solid $yellow;
             background: $darkred;
-        }
-
-        &:last-of-type {
-            background: $orange;
         }
     }
 }
@@ -199,27 +137,19 @@ a {
         }
 
         button {
-            background: #f97247;
             border-radius: 48px;
-            border: none;
-            color: white;
             font-size: 24px;
-            width: 50%;
-            padding: 1rem;
         }
 
         .blub-box {
-            border: 3px solid #f97247;
+            border: 2px solid #f97247;
             background: rgba(255, 255, 255, 0.12);
             border-radius: 100px;
             max-width: 530px;
-            padding: 0 1rem;
 
             .blub-scroll {
-                padding: 1.25rem;
                 border-radius: 76px;
                 max-height: 600px;
-                height: 100%;
                 overflow-y: scroll;
 
                 .box {
@@ -227,8 +157,6 @@ a {
                     background: #311212;
                     border-radius: 196px;
                     padding: 1rem 4rem;
-                    margin-bottom: 1rem;
-
 
                     &:first-of-type {
                         background: #f97247;
@@ -241,7 +169,6 @@ a {
 
                     p {
                         font-size: 24px;
-                        color: white;
                         opacity: 1;
                     }
 
@@ -253,23 +180,18 @@ a {
 
                 &::-webkit-scrollbar {
                     width: 8px;
-                    /* ширина scrollbar */
                 }
 
                 &::-webkit-scrollbar-track {
                     background: rgba(255, 255, 255, 0.12);
-                    /* цвет дорожки */
                     border-radius: 20px;
                     margin-top: 6rem;
                 }
 
                 &::-webkit-scrollbar-thumb {
                     background-color: #f97247;
-                    /* цвет плашки */
                     border-radius: 20px;
-                    /* закругления плашки */
                     border: 3px solid #f97247;
-                    /* padding вокруг плашки */
                 }
 
                 &::-webkit-scrollbar-button:end:increment {
@@ -281,9 +203,60 @@ a {
         }
     }
 
-    @media screen and (max-width:1550px) {
+
+
+}
+
+#footer {
+    height: 130px;
+    background: #311212;
+    border-bottom: 0;
+    border-radius: 64px 64px 0 0;
+    z-index: 4;
+
+    .terms a {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        color: white;
+
+        &:first-of-type {
+            margin: 0 !important;
+            color: $orange !important;
+            text-decoration: underline !important;
+        }
+    }
+
+    .socials {
+        svg {
+            width: 27px;
+            height: 27px;
+            margin-left: 0.5rem;
+
+            @media screen and (min-width: 575px) {
+                &.mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    a svg:hover stop:first-child {
+        stop-color: #f29da2;
+    }
+
+    a svg:hover stop:last-child {
+        stop-color: #f99247;
+    }
+}
+
+@media screen and (max-width:1550px) {
+    #landing {
         height: auto;
-        padding-bottom: 20rem;
+    }
+
+    #banner {
+        height: auto;
+        padding-bottom: 15rem;
         margin-top: 4rem;
 
         .banner-context {
@@ -306,35 +279,113 @@ a {
         }
 
     }
+}
 
-    @media screen and (max-width:768px) {
-        .banner-context {
-            h1 {
-                font-size: 46px;
+@media screen and (max-width:1400px) {
+    #navbar .nav {
+        justify-content: start !important;
+    }
+}
 
-                &.blub {
-                    margin-top: 14rem;
-                    font-size: 32px;
-                }
-            }
+@media screen and (max-width:992px) {
+    #navbar {
+        min-height: 65px;
 
-            p {
-                font-size: 20px;
-            }
+        .nav {
+            display: none !important;
+        }
 
+        .buttonset {
             button {
-                font-size: 18px;
+                display: none;
             }
 
-            .blub-box .blub-scroll .box {
-                height: 120px;
+            .select {
+                border-radius: 100px;
+                padding: 0.5rem;
+                left: -3.5rem;
+                top: 16%;
 
                 p {
-                    font-size: 16px;
+                    display: none;
                 }
+            }
+
+            #burger {
+                display: block !important;
+                width: 22px;
+                cursor: pointer;
             }
         }
     }
+}
+
+@media screen and (max-width:768px) {
+    #banner .banner-context {
+        h1 {
+            font-size: 46px;
+
+            &.blub {
+                margin-top: 14rem;
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 18px;
+        }
+
+        .blub-box .blub-scroll .box {
+            height: 120px;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #footer {
+        height: auto;
+        padding-top: 2rem;
+
+        .terms {
+            flex-flow: column;
+            align-items: start !important;
+
+            a {
+                margin-left: 0;
+
+                &:first-of-type {
+                    color: white !important;
+                    text-decoration: none !important;
+                }
+            }
+        }
+
+
+        .socials {
+            margin-top: 1.5rem;
+            justify-content: start !important;
+            svg {
+                width: 23px;
+                height: 23px;
+                margin-left: 0 !important;
+                margin-right: 0.5rem;
+            }
+        }
+
+        a,
+        p {
+            font-size: 14px !important;
+        }
+    }
+
 }
 
 .running-lines-vertical {
@@ -390,95 +441,5 @@ a {
 
     @media screen and (max-width:768px) {
         top: 22rem;
-    }
-}
-
-#footer {
-    height: 130px;
-    background: #311212;
-    border: 4px solid #f97247;
-    border-bottom: 0;
-    border-radius: 64px 64px 0 0;
-    z-index: 4;
-
-    .terms a {
-        margin-left: 0.5rem;
-
-        &:first-of-type {
-            margin: 0 !important;
-            color: $orange !important;
-            text-decoration: underline !important;
-        }
-    }
-
-    a {
-        color: white;
-        font-size: 1rem;
-        text-decoration: none;
-
-        &:first-of-type {
-            text-decoration: underline;
-            color: #f97247;
-            margin: 0 !important;
-        }
-    }
-
-    .socials {
-        svg {
-            width: 32px;
-            height: 32px;
-            margin-left: 0.5rem;
-
-            @media screen and (min-width: 575px) {
-                &.mobile {
-                    display: none;
-                }
-            }
-        }
-    }
-
-    a svg:hover stop:first-child {
-        stop-color: #f29da2;
-    }
-
-    a svg:hover stop:last-child {
-        stop-color: #f99247;
-    }
-
-    @media screen and (max-width: 575px) {
-        height: auto;
-        padding-top: 2rem;
-
-        .terms {
-            flex-flow: column;
-            align-items: start !important;
-
-            a {
-                margin-left: 0;
-
-                &:first-of-type {
-                    color: white !important;
-                    text-decoration: none !important;
-                }
-            }
-        }
-
-
-        .socials {
-            margin-top: 1.5rem;
-            justify-content: start !important;
-
-            svg {
-                width: 23px;
-                height: 23px;
-                margin-left: 0 !important;
-                margin-right: 0.5rem;
-            }
-        }
-
-        a,
-        p {
-            font-size: 14px !important;
-        }
     }
 }

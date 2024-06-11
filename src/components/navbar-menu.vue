@@ -6,6 +6,7 @@
     <b-nav class="nav text-center d-flex justify-content-center w-full w-100">
       <b-nav-item
         class="nav-link text-white fs-6"
+        role="button"
         v-for="link in menu"
         :key="link"
       >
@@ -15,7 +16,7 @@
     <div
       class="buttonset position-absolute top-0 end-0 d-flex align-items-center h-100 me-4"
     >
-      <div v-click-outside="onClickOutside" class="select position-absolute">
+      <div v-click-outside="onClickOutside" class="select position-absolute border-yellow">
         <a
           v-on:click="this.langDropdown = !this.langDropdown"
           class="d-flex align-items-center cursor-pointer"
@@ -33,10 +34,11 @@
           <a class="mb-0 text-end">{{ otherLang }}</a>
         </div>
       </div>
-      <button class="me-3">LOG IN</button>
+      <button class="me-3 border-yellow text-white">LOG IN</button>
       <button class="btn-orange">SIGN UP</button>
       <div
         v-on:click="this.showMenu = !this.showMenu"
+        role="button"
         class="d-none"
         id="burger"
       >
@@ -71,20 +73,21 @@
   </div>
   <div
     v-if="showMenu"
-    class="container-fluid d-flex justify-content-center position-absolute start-0 px-0"
+    class="container-fluid d-flex justify-content-center position-absolute start-0 px-0 w-100"
     id="BurgerMenu"
   >
     <div class="container d-flex flex-column px-0">
       <b-nav class="d-flex flex-column mb-5">
         <b-nav-item
-          class="burger-link w-100 text-white fs-5"
+          class="burger-link border-orange  w-100 text-white fs-5 mb-2 py-3 px-4"
+          role="button"
           v-for="link in menu"
           :key="link"
         >
           {{ link.name }}
         </b-nav-item>
       </b-nav>
-      <button>LOG IN</button><button>SIGN UP</button>
+      <button class="py-3 px-4 text-white border-yellow mb-2">LOG IN</button><button class="py-3 px-4 btn-orange">SIGN UP</button>
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="w-100 position-absolute bottom-0 left-0">
+  <div id="footer" class="w-100 position-absolute bottom-0 left-0 border-orange">
     <div
       class="container h-100 d-flex justify-content-between align-items-end pb-3"
     >
@@ -14,7 +14,7 @@
             <p class="text-white fs-6 mb-2">Our social media:</p>
             <div>
               <a v-for="(icon, idx) in socialsSVG" :key="idx" href="#">
-                <svg width="0" height="0" class="d-none">
+                <svg width="0" height="0" class="d-none m-0">
                   <defs>
                     <path
                       :id="`gradient-path-${idx}`"
@@ -29,7 +29,7 @@
                       :d="icon.path1"
                     />
                   </defs></svg
-                ><svg viewBox="0 0 32 32" :class="icon.class ? icon.class : ''">
+                ><svg viewBox="0 0 32 32" :style="idx == 0 ? 'margin-left:0;':''" :class="icon.class ? icon.class : ''">
                   <defs>
                     <linearGradient :id="`linear-grad-${idx}`">
                       <stop offset="0" stop-color="#F97247" />

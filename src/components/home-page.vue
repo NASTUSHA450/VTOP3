@@ -12,15 +12,15 @@
         <div>
           <h1>Lorem IPSU<br /><span>OPEN</span></h1>
           <p class="mt-3 mb-5">Maybe You Maybe Me.</p>
-          <button>PARTNER</button>
+          <button class="btn-orange w-100 p-3">PARTNER</button>
         </div>
 
-        <div class="">
+        <div>
           <h1 class="blub text-center">BLUB</h1>
-          <div class="blub-box">
-            <div class="blub-scroll">
-              <div v-for="box in blubContent" :key="box" class="box">
-                <p class="mb-1 box-text text-start">{{ box.text }}</p>
+          <div class="blub-box px-3">
+            <div class="blub-scroll p-4">
+              <div v-for="box in blubContent" :key="box" class="box mb-3">
+                <p class="mb-1 box-text text-start text-white">{{ box.text }}</p>
                 <span>{{ box.data }}</span>
               </div>
             </div>
